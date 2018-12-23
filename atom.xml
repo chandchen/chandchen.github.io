@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Chand Chen</title>
+  <title>CHANGO</title>
   
   <subtitle>To Be An Artist</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/chandchen/"/>
-  <updated>2018-12-09T13:15:30.082Z</updated>
+  <updated>2018-12-23T16:15:28.299Z</updated>
   <id>https://github.com/chandchen/</id>
   
   <author>
@@ -17,25 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>this-is-new</title>
-    <link href="https://github.com/chandchen/this-is-old/"/>
-    <id>https://github.com/chandchen/this-is-old/</id>
-    <published>2018-12-09T13:15:30.000Z</published>
-    <updated>2018-12-09T13:15:30.082Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>something</title>
-    <link href="https://github.com/chandchen/something/"/>
-    <id>https://github.com/chandchen/something/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/something/"/>
+    <id>https://github.com/chandchen/2018/12/something/</id>
     <published>2018-12-09T13:11:35.000Z</published>
-    <updated>2018-12-09T13:11:35.701Z</updated>
+    <updated>2018-12-23T16:15:28.299Z</updated>
     
     <summary type="html">
     
@@ -46,8 +32,8 @@
   
   <entry>
     <title>Placeholder</title>
-    <link href="https://github.com/chandchen/placeholder/"/>
-    <id>https://github.com/chandchen/placeholder/</id>
+    <link href="https://github.com/chandchen/2018/12/placeholder/"/>
+    <id>https://github.com/chandchen/2018/12/placeholder/</id>
     <published>2018-12-09T12:28:25.000Z</published>
     <updated>2018-12-23T04:28:39.323Z</updated>
     
@@ -59,11 +45,11 @@
   </entry>
   
   <entry>
-    <title>photo</title>
-    <link href="https://github.com/chandchen/photo/"/>
-    <id>https://github.com/chandchen/photo/</id>
+    <title>Photos</title>
+    <link href="https://github.com/chandchen/2018/12/photo/"/>
+    <id>https://github.com/chandchen/2018/12/photo/</id>
     <published>2018-12-09T12:07:47.000Z</published>
-    <updated>2018-12-09T12:08:50.941Z</updated>
+    <updated>2018-12-23T16:16:45.437Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/7853084cgw1f7vueqesr5j21jk0uh446.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/7853084cgw1f7vueqesr5j21jk0uh446.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/7853084cgw1f7vueqesr5j21jk0uh446.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/7853084cgw1f7vueqesr5j21jk0uh446.jpg" alt=""> </p>]]></content>
     
@@ -80,11 +66,11 @@
   </entry>
   
   <entry>
-    <title>posytttttt</title>
-    <link href="https://github.com/chandchen/posytttttt/"/>
-    <id>https://github.com/chandchen/posytttttt/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/post/"/>
+    <id>https://github.com/chandchen/2018/12/post/</id>
     <published>2018-12-09T11:58:55.000Z</published>
-    <updated>2018-12-09T11:58:55.507Z</updated>
+    <updated>2018-12-23T16:15:23.356Z</updated>
     
     <summary type="html">
     
@@ -94,11 +80,11 @@
   </entry>
   
   <entry>
-    <title>testerdadada]dauuuu</title>
-    <link href="https://github.com/chandchen/testerdadada-dauuuu/"/>
-    <id>https://github.com/chandchen/testerdadada-dauuuu/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/someone/"/>
+    <id>https://github.com/chandchen/2018/12/someone/</id>
     <published>2018-12-09T11:58:22.000Z</published>
-    <updated>2018-12-09T11:58:22.972Z</updated>
+    <updated>2018-12-23T16:15:46.630Z</updated>
     
     <summary type="html">
     
@@ -108,11 +94,11 @@
   </entry>
   
   <entry>
-    <title>testerdadada]da</title>
-    <link href="https://github.com/chandchen/testerdadada-da/"/>
-    <id>https://github.com/chandchen/testerdadada-da/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/someday/"/>
+    <id>https://github.com/chandchen/2018/12/someday/</id>
     <published>2018-12-09T11:57:18.000Z</published>
-    <updated>2018-12-09T11:57:18.253Z</updated>
+    <updated>2018-12-23T16:15:40.932Z</updated>
     
     <summary type="html">
     
@@ -122,11 +108,11 @@
   </entry>
   
   <entry>
-    <title>testerdadada</title>
-    <link href="https://github.com/chandchen/testerdadada/"/>
-    <id>https://github.com/chandchen/testerdadada/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/nothing/"/>
+    <id>https://github.com/chandchen/2018/12/nothing/</id>
     <published>2018-12-09T11:56:57.000Z</published>
-    <updated>2018-12-09T11:56:57.283Z</updated>
+    <updated>2018-12-23T16:15:51.549Z</updated>
     
     <summary type="html">
     
@@ -136,11 +122,11 @@
   </entry>
   
   <entry>
-    <title>xixi hello</title>
-    <link href="https://github.com/chandchen/tester-abc/"/>
-    <id>https://github.com/chandchen/tester-abc/</id>
+    <title>Placeholder</title>
+    <link href="https://github.com/chandchen/2018/12/tester-abc/"/>
+    <id>https://github.com/chandchen/2018/12/tester-abc/</id>
     <published>2018-12-09T11:56:41.000Z</published>
-    <updated>2018-12-09T13:09:41.774Z</updated>
+    <updated>2018-12-23T16:15:34.464Z</updated>
     
     <summary type="html">
     
@@ -151,8 +137,8 @@
   
   <entry>
     <title>How to use Hexo and deploy to GitHub Pages</title>
-    <link href="https://github.com/chandchen/How-to-use-Hexo/"/>
-    <id>https://github.com/chandchen/How-to-use-Hexo/</id>
+    <link href="https://github.com/chandchen/2018/11/How-to-use-Hexo/"/>
+    <id>https://github.com/chandchen/2018/11/How-to-use-Hexo/</id>
     <published>2018-11-04T07:40:09.000Z</published>
     <updated>2018-12-09T11:45:01.021Z</updated>
     
@@ -175,8 +161,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/chandchen/hello-world/"/>
-    <id>https://github.com/chandchen/hello-world/</id>
+    <link href="https://github.com/chandchen/2018/11/hello-world/"/>
+    <id>https://github.com/chandchen/2018/11/hello-world/</id>
     <published>2018-11-01T15:45:36.833Z</published>
     <updated>2018-12-09T10:52:58.427Z</updated>
     
