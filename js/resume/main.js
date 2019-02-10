@@ -137,14 +137,6 @@
             ace_close_sidebar();
         });
 
-        // Sidebar Custom Scroll
-        $("#ace-sidebar-inner").mCustomScrollbar({
-            axis: "y",
-            theme: "minimal-dark",
-            autoHideScrollbar: true,
-            scrollButtons: { enable: true }
-        });
-
         /**
          * 6.0 - Ace Circle & Line Charts
          */
