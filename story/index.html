@@ -1,156 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>story | ChandChen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="new story page">
-<meta property="og:type" content="website">
-<meta property="og:title" content="story">
-<meta property="og:url" content="https://github.com/chandchen/story/index.html">
-<meta property="og:site_name" content="ChandChen">
-<meta property="og:description" content="new story page">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-09T12:20:02.875Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="story">
-<meta name="twitter:description" content="new story page">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-  <link rel="stylesheet" href="/css/donate.css">
-  
-</head>
-</html>
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
-  <header id="header" class="header">
-  <nav class="mobile-nav">
-    <h1 class="nickname">ChandChen</h1>
-    <ul class="mobile-nav-menu">
-      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
-      <input type="checkbox" id="mobile-menu-toggle">
-      <ul class="mobile-nav-link">
-        
-        <a href="/">Home</a>
-        
-        <a href="/archives">Archives</a>
-        
-        <a href="/about">About</a>
-        
-      </ul>
-    </ul>
-  </nav>
-	
-		<nav id="main-nav" class="main-nav nav-left">
-	
-	
-	  <a class="main-nav-link" href="/">Home</a>
-	
-	  <a class="main-nav-link" href="/archives">Archives</a>
-	
-	  <a class="main-nav-link" href="/about">About</a>
-	
-  </nav>
-</header>
-
-  <hr>
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      story
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p>new story page</p>
-
-      
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/story/index.html" class="article-date">
-  <time datetime="2019-02-09T12:13:15.000Z" itemprop="datePublished">2019-02-09</time>
-</a>
-
-        </li>
-        
-        
-        <hr>
-      </ul>
-    </footer>
-  </div>
-  
-    
-
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      
-      <hr>
-      <div id="footerContent" class="footer-content">
-        <p>I’m <strong><a href="/about/">Chand</a></strong>, a web developer. All articles are under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. Follow me on <a href="https://www.weibo.com/suchcool/">Weibo</a> for communicating, <a href="https://github.com/chandchen">GitHub</a> for code, and <a href="https://www.instagram.com/chandrdo/">Instagram</a> for daily.</p>
-
-
-      </div>
-    </footer>
-
-      
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
-    </div>
-  </body>
+<html>
+    <head><meta name="generator" content="Hexo 3.8.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>App Download Demo</title>   
+        <script type="text/javascript">
+            var browser = {
+                versions: function() {
+                    var u = navigator.userAgent, app = navigator.appVersion;
+                    return {
+                        trident: u.indexOf('Trident') > -1, //IE core
+                        presto: u.indexOf('Presto') > -1, //Opera core
+                        webKit: u.indexOf('AppleWebKit') > -1, //Apple、Google core
+                        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //FireFox core
+                        mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //Mobile device
+                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios device
+                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android device or uc browser
+                        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //iPhone or QQHD browser
+                        iPad: u.indexOf('iPad') > -1, //iPad
+                        webApp: u.indexOf('Safari') == -1 //webapp
+                    };
+                }(),
+                language: (navigator.browserLanguage || navigator.language).toLowerCase()
+            }
+            if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+                window.location = "https://itunes.apple.com/cn/app/id1373611815?l=zh&ls=1&mt=8";
+            }
+            else if (browser.versions.android) {
+                window.location = "https://sj.qq.com/myapp/detail.htm?apkName=com.vs.vipsai";
+            }
+        </script>
+    </head>
+    <body>
+        Redirect to the download page...
+    </body>
 </html>
