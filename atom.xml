@@ -150,13 +150,20 @@
   </entry>
   
   <entry>
-    <title>Placeholder</title>
-    <link href="https://github.com/chandchen/2018/12/tester-abc/"/>
-    <id>https://github.com/chandchen/2018/12/tester-abc/</id>
+    <title>Django Software Foundation</title>
+    <link href="https://github.com/chandchen/2018/12/django-software-foundation/"/>
+    <id>https://github.com/chandchen/2018/12/django-software-foundation/</id>
     <published>2018-12-09T11:56:41.000Z</published>
-    <updated>2018-12-23T16:15:34.464Z</updated>
+    <updated>2019-04-02T15:24:21.293Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Check-your-django-version"><a href="#Check-your-django-version" class="headerlink" title="Check your django version"></a>Check your django version</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m django --version</span><br></pre></td></tr></table></figure><h4 id="Create-a-projet"><a href="#Create-a-projet" class="headerlink" title="Create a projet"></a>Create a projet</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin startproject mysite</span><br></pre></td></tr></table></figure><h4 id="Project-structure"><a href="#Project-structure" class="headerlink" title="Project structure"></a>Project structure</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage.py</span><br><span class="line">    mysite/</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py runserver 0:8080</span><br><span class="line"># 0 is a shortcut for 0.0.0.0</span><br></pre></td></tr></table></figure><h4 id="Create-the-apps"><a href="#Create-the-apps" class="headerlink" title="Create the apps"></a>Create the apps</h4><blockquote><p>Projects vs. apps: a project is a collection of configuration and apps for a particular wesite. A project can contain multiple apps, An app can be in multiple projects.</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py startapp polls</span><br></pre></td></tr></table></figure><h6 id="App-Structures"><a href="#App-Structures" class="headerlink" title="App Structures"></a>App Structures</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">polls/</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations/</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Check-your-django-version&quot;&gt;&lt;a href=&quot;#Check-your-django-version&quot; class=&quot;headerlink&quot; title=&quot;Check your django version&quot;&gt;&lt;/a&gt;Check your 
+      
     
     </summary>
     
