@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>Building a Calendar with Pure JavaScript</title>
+    <link href="https://github.com/chandchen/2018/12/calendar-javascript-demo/"/>
+    <id>https://github.com/chandchen/2018/12/calendar-javascript-demo/</id>
+    <published>2018-12-11T10:25:57.000Z</published>
+    <updated>2019-04-05T12:44:43.276Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Building-a-Calendar-with-Pure-JavaScript"><a href="#Building-a-Calendar-with-Pure-JavaScript" class="headerlink" title="Building a Calendar with Pure JavaScript"></a>Building a Calendar with Pure JavaScript</h3><ul><li><p>Demo: <a href="http://chandchen.com/projects/calendar/" target="_blank" rel="noopener">http://chandchen.com/projects/calendar/</a></p></li><li><p>Code: <a href="https://github.com/chandchen/HTML-CSS-JavaScript">https://github.com/chandchen/HTML-CSS-JavaScript</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Building-a-Calendar-with-Pure-JavaScript&quot;&gt;&lt;a href=&quot;#Building-a-Calendar-with-Pure-JavaScript&quot; class=&quot;headerlink&quot; title=&quot;Building a C
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Placeholder</title>
     <link href="https://github.com/chandchen/2018/12/something/"/>
     <id>https://github.com/chandchen/2018/12/something/</id>
@@ -122,27 +143,6 @@
     <updated>2018-12-23T16:15:40.932Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Building a Calendar with Pure JavaScript</title>
-    <link href="https://github.com/chandchen/2018/12/calendar-javascript-demo/"/>
-    <id>https://github.com/chandchen/2018/12/calendar-javascript-demo/</id>
-    <published>2018-12-09T11:56:57.000Z</published>
-    <updated>2019-04-05T09:51:07.519Z</updated>
-    
-    <content type="html"><![CDATA[<html><br><head><meta name="generator" content="Hexo 3.8.0"><br>  <meta charset="utf-8"><br>  <title>Building a Calendar with Pure JavaScript</title><br>  <link rel="stylesheet" href="/css/calendar.css" type="text/css"><br></head><br><body><br>  <div class="calendar" id="calendar"></div><br>  <div class="calendar-detail hidden" id="calendar-detail"><br>    <div class="lunar" id="lunar"></div><br>    <label>宜</label><div class="suit" id="suit"></div><br>    <label>忌</label><div class="avoid" id="avoid"></div><br>  </div><br>  <script type="text/javascript" src="/js/calendar.js"></script><br></body><br></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;br&gt;&lt;head&gt;&lt;meta name=&quot;generator&quot; content=&quot;Hexo 3.8.0&quot;&gt;&lt;br&gt;  &lt;meta charset=&quot;utf-8&quot;&gt;&lt;br&gt;  &lt;title&gt;Building a Calendar with Pure JavaScrip
-      
     
     </summary>
     

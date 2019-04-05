@@ -1,1 +1,190 @@
-<html><br><head><meta name="generator" content="Hexo 3.8.0"><br>  <meta charset="utf-8"><br>  <title>Building a Calendar with Pure JavaScript</title><br>  <link rel="stylesheet" href="/css/calendar.css" type="text/css"><br></head><br><body><br>  <div class="calendar" id="calendar"></div><br>  <div class="calendar-detail hidden" id="calendar-detail"><br>    <div class="lunar" id="lunar"></div><br>    <label>宜</label><div class="suit" id="suit"></div><br>    <label>忌</label><div class="avoid" id="avoid"></div><br>  </div><br>  <script type="text/javascript" src="/js/calendar.js"></script><br></body><br></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Building a Calendar with Pure JavaScript | ChandChen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Building a Calendar with Pure JavaScript Demo: http://chandchen.com/projects/calendar/  Code: https://github.com/chandchen/HTML-CSS-JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a Calendar with Pure JavaScript">
+<meta property="og:url" content="https://github.com/chandchen/2018/12/calendar-javascript-demo/index.html">
+<meta property="og:site_name" content="ChandChen">
+<meta property="og:description" content="Building a Calendar with Pure JavaScript Demo: http://chandchen.com/projects/calendar/  Code: https://github.com/chandchen/HTML-CSS-JavaScript">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-05T12:44:43.276Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building a Calendar with Pure JavaScript">
+<meta name="twitter:description" content="Building a Calendar with Pure JavaScript Demo: http://chandchen.com/projects/calendar/  Code: https://github.com/chandchen/HTML-CSS-JavaScript">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-calendar-javascript-demo" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">ChandChen</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle">
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Building a Calendar with Pure JavaScript
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h3 id="Building-a-Calendar-with-Pure-JavaScript"><a href="#Building-a-Calendar-with-Pure-JavaScript" class="headerlink" title="Building a Calendar with Pure JavaScript"></a>Building a Calendar with Pure JavaScript</h3><ul>
+<li><p>Demo: <a href="http://chandchen.com/projects/calendar/" target="_blank" rel="noopener">http://chandchen.com/projects/calendar/</a></p>
+</li>
+<li><p>Code: <a href="https://github.com/chandchen/HTML-CSS-JavaScript">https://github.com/chandchen/HTML-CSS-JavaScript</a></p>
+</li>
+</ul>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/12/calendar-javascript-demo/" class="article-date">
+  <time datetime="2018-12-11T10:25:57.000Z" itemprop="datePublished">2018-12-11</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2019/03/qrcode/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Prev</strong>
+      <div class="article-nav-title">
+        
+          IOS &amp; Android Download app using one qrcode solution
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/something/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Next</strong>
+      <div class="article-nav-title">Placeholder</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>I’m <strong><a href="/about/">Chand</a></strong>, a web developer. All articles are under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. Follow me on <a href="https://www.weibo.com/suchcool/">Weibo</a> for communicating, <a href="https://github.com/chandchen">GitHub</a> for code, and <a href="https://www.instagram.com/chandrdo/">Instagram</a> for daily.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128592946-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128592946-1');
+  </script>
+  <!-- End Google Analytics -->
+  
+
+
+
+
+    </div>
+  </body>
+</html>
