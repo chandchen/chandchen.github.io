@@ -129,19 +129,19 @@
   </entry>
   
   <entry>
-    <title>Placeholder</title>
-    <link href="https://github.com/chandchen/2018/12/nothing/"/>
-    <id>https://github.com/chandchen/2018/12/nothing/</id>
+    <title>Building a Calendar with Pure JavaScript</title>
+    <link href="https://github.com/chandchen/2018/12/calendar-javascript-demo/"/>
+    <id>https://github.com/chandchen/2018/12/calendar-javascript-demo/</id>
     <published>2018-12-09T11:56:57.000Z</published>
-    <updated>2019-02-03T06:06:19.000Z</updated>
+    <updated>2019-04-05T09:51:07.519Z</updated>
     
-    <content type="html"><![CDATA[<html><br>    hahaha<br></html>]]></content>
+    <content type="html"><![CDATA[<html><br><head><meta name="generator" content="Hexo 3.8.0"><br>  <meta charset="utf-8"><br>  <title>Building a Calendar with Pure JavaScript</title><br>  <link rel="stylesheet" href="/css/calendar.css" type="text/css"><br></head><br><body><br>  <div class="calendar" id="calendar"></div><br>  <div class="calendar-detail hidden" id="calendar-detail"><br>    <div class="lunar" id="lunar"></div><br>    <label>宜</label><div class="suit" id="suit"></div><br>    <label>忌</label><div class="avoid" id="avoid"></div><br>  </div><br>  <script type="text/javascript" src="/js/calendar.js"></script><br></body><br></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;br&gt;    hahaha&lt;br&gt;&lt;/html&gt;
+        &lt;html&gt;&lt;br&gt;&lt;head&gt;&lt;meta name=&quot;generator&quot; content=&quot;Hexo 3.8.0&quot;&gt;&lt;br&gt;  &lt;meta charset=&quot;utf-8&quot;&gt;&lt;br&gt;  &lt;title&gt;Building a Calendar with Pure JavaScrip
       
     
     </summary>
