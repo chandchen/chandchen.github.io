@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/chandchen/2018/12/django/</loc>
+    
+    <lastmod>2019-04-24T15:57:36.568Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2018/12/virtualenv/</loc>
+    
+    <lastmod>2019-04-24T15:55:50.186Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/chandchen/2019/04/buildout/</loc>
     
     <lastmod>2019-04-24T15:47:20.470Z</lastmod>
@@ -9,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2018/12/calendar-javascript-demo/</loc>
+    <loc>https://github.com/chandchen/2018/12/calendar/</loc>
     
     <lastmod>2019-04-05T12:44:43.276Z</lastmod>
     
@@ -33,13 +47,6 @@
     <loc>https://github.com/chandchen/projects/apps/index.html</loc>
     
     <lastmod>2019-04-05T10:11:24.666Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/12/django-software-foundation/</loc>
-    
-    <lastmod>2019-04-02T15:24:21.293Z</lastmod>
     
   </url>
   
@@ -72,23 +79,9 @@
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2018/12/someday/</loc>
-    
-    <lastmod>2018-12-23T16:15:40.932Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/chandchen/2018/12/something/</loc>
     
     <lastmod>2018-12-23T16:15:28.299Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/12/post/</loc>
-    
-    <lastmod>2018-12-23T16:15:23.356Z</lastmod>
     
   </url>
   
@@ -100,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2018/11/How-to-use-Hexo/</loc>
+    <loc>https://github.com/chandchen/2018/11/hexo/</loc>
     
     <lastmod>2018-12-09T11:45:01.021Z</lastmod>
     
