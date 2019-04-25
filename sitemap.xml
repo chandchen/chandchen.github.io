@@ -2,28 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/chandchen/2018/12/django/</loc>
+    <loc>https://github.com/chandchen/2018/12/gallery-photos/</loc>
     
-    <lastmod>2019-04-24T15:57:36.568Z</lastmod>
+    <lastmod>2019-04-25T14:54:12.332Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2018/12/someone/</loc>
+    
+    <lastmod>2019-04-25T14:20:56.125Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/chandchen/2018/12/virtualenv/</loc>
     
-    <lastmod>2019-04-24T15:55:50.186Z</lastmod>
+    <lastmod>2019-04-25T14:20:08.346Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2019/04/buildout/</loc>
+    <loc>https://github.com/chandchen/2018/11/django-hard-way/</loc>
+    
+    <lastmod>2019-04-25T14:19:41.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2019/03/download-app/</loc>
+    
+    <lastmod>2019-04-25T14:08:23.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2018/11/hexo/</loc>
+    
+    <lastmod>2019-04-25T13:46:55.221Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2019/04/django-buildout/</loc>
     
     <lastmod>2019-04-24T15:47:20.470Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2018/12/calendar/</loc>
+    <loc>https://github.com/chandchen/2018/12/calendar-js/</loc>
     
     <lastmod>2019-04-05T12:44:43.276Z</lastmod>
     
@@ -33,13 +61,6 @@
     <loc>https://github.com/chandchen/projects/calendar/index.html</loc>
     
     <lastmod>2019-04-05T11:26:17.543Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2019/03/qrcode/</loc>
-    
-    <lastmod>2019-04-05T10:15:49.280Z</lastmod>
     
   </url>
   
@@ -65,20 +86,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/chandchen/2018/12/photo/</loc>
-    
-    <lastmod>2018-12-23T16:16:45.437Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/12/someone/</loc>
-    
-    <lastmod>2018-12-23T16:15:46.630Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/chandchen/2018/12/something/</loc>
     
     <lastmod>2018-12-23T16:15:28.299Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://github.com/chandchen/2018/12/placeholder/</loc>
     
     <lastmod>2018-12-23T04:28:39.323Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/11/hexo/</loc>
-    
-    <lastmod>2018-12-09T11:45:01.021Z</lastmod>
     
   </url>
   
