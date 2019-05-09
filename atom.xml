@@ -39,11 +39,11 @@
   </entry>
   
   <entry>
-    <title>Single QR Code for Both Android Market and App Store</title>
+    <title>QR Code for Both Android Market and App Store</title>
     <link href="https://github.com/chandchen/2019/03/download-app/"/>
     <id>https://github.com/chandchen/2019/03/download-app/</id>
     <published>2019-03-02T15:55:33.000Z</published>
-    <updated>2019-04-25T14:08:23.489Z</updated>
+    <updated>2019-05-09T14:30:22.083Z</updated>
     
     <content type="html"><![CDATA[<p>The embedded URL could link to a webpage that checks user agents and redirects appropriately. If the <strong>Safari</strong> on iOS user agent is detected, redirect to Apple’s App Store. An <strong>Android</strong> user agent would be redirected to an appropriate app store.</p><h5 id="Quick-Solution"><a href="#Quick-Solution" class="headerlink" title="Quick Solution"></a>Quick Solution</h5><ol><li>Create a separate web link with embedded js code that checks browser user-agent informations and doing a redirection</li><li>Using the web link to generate the corresponding QR code</li><li>When user scans the QR code using the mobile phone, it can automatically identify the device and then automatically redirect to the corresponding page of the device.</li></ol><p><img src="https://i.imgur.com/pw68gTW.png" alt="Scan to Download an Awesome App"></p><p>It’s quite easy to make them work, you just need a simple html file, here’s what it looks like in reality:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Thank You for Downloading...<span class="tag">&lt;/<span class="name">title</span>&gt;</span>   </span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">            var browser = &#123;</span></span><br><span class="line"><span class="undefined">                versions: function() &#123;</span></span><br><span class="line"><span class="undefined">                    var u = navigator.userAgent, app = navigator.appVersion;</span></span><br><span class="line"><span class="undefined">                    return &#123;</span></span><br><span class="line"><span class="undefined">                        trident: u.indexOf('Trident') &gt; -1, //IE core</span></span><br><span class="line"><span class="undefined">                        presto: u.indexOf('Presto') &gt; -1, //Opera core</span></span><br><span class="line"><span class="undefined">                        webKit: u.indexOf('AppleWebKit') &gt; -1, //Apple、Google core</span></span><br><span class="line"><span class="undefined">                        gecko: u.indexOf('Gecko') &gt; -1 &amp;&amp; u.indexOf('KHTML') == -1, //FireFox core</span></span><br><span class="line"><span class="undefined">                        mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //Mobile device</span></span><br><span class="line"><span class="undefined">                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios device</span></span><br><span class="line"><span class="undefined">                        android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android device or uc browser</span></span><br><span class="line"><span class="undefined">                        iPhone: u.indexOf('iPhone') &gt; -1 || u.indexOf('Mac') &gt; -1, //iPhone or QQHD browser</span></span><br><span class="line"><span class="undefined">                        iPad: u.indexOf('iPad') &gt; -1, //iPad</span></span><br><span class="line"><span class="undefined">                        webApp: u.indexOf('Safari') == -1 //webapp</span></span><br><span class="line"><span class="undefined">                    &#125;;</span></span><br><span class="line"><span class="undefined">                &#125;(),</span></span><br><span class="line"><span class="undefined">                language: (navigator.browserLanguage || navigator.language).toLowerCase()</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) &#123;</span></span><br><span class="line"><span class="undefined">                window.location = "https://itunes.apple.com/cn/app/xxx";</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            else if (browser.versions.android) &#123;</span></span><br><span class="line"><span class="undefined">                window.location = "https://sj.qq.com/myapp/detail.htm?apkName=xxx";</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        Thank You for Downloading...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -118,13 +118,24 @@
   </entry>
   
   <entry>
-    <title>Placeholder</title>
-    <link href="https://github.com/chandchen/2018/12/something/"/>
-    <id>https://github.com/chandchen/2018/12/something/</id>
+    <title>How to Make a Static Website</title>
+    <link href="https://github.com/chandchen/2018/12/static-sites/"/>
+    <id>https://github.com/chandchen/2018/12/static-sites/</id>
     <published>2018-12-09T13:11:35.000Z</published>
-    <updated>2018-12-23T16:15:28.299Z</updated>
+    <updated>2019-05-09T14:27:23.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近研究建站，突发奇想，可以用免费的服务器搭一个静态的页面，写一些简单的Js脚本，实现简单又好玩的功能，在学习中不断提升。</p><p>项目1 - 随机成语（已部署上线）</p><ol><li>在阿里云注册一个域名</li><li>在Gitlab创建一个代码仓库</li><li>本地安装Hexo，或者使用其他框架也行</li><li>添加<code>.gitlab-ci.yml</code>部署文件</li><li>将本地Hexo项目的代码Push到Gitlab</li><li>绑定已经注册的域名</li><li>开启SSL证书，设置Https自动跳转</li><li>大功告成</li></ol><p>项目地址：<a href="https://randomword.cn/" target="_blank" rel="noopener">https://randomword.cn/</a></p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近研究建站，突发奇想，可以用免费的服务器搭一个静态的页面，写一些简单的Js脚本，实现简单又好玩的功能，在学习中不断提升。&lt;/p&gt;
+&lt;p&gt;项目1 - 随机成语（已部署上线）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在阿里云注册一个域名&lt;/li&gt;
+&lt;li&gt;在Gitlab创建一个代码仓库&lt;/
+      
     
     </summary>
     

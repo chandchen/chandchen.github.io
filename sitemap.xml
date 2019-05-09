@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/chandchen/2019/03/download-app/</loc>
+    
+    <lastmod>2019-05-09T14:30:22.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/2018/12/static-sites/</loc>
+    
+    <lastmod>2019-05-09T14:27:23.177Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/chandchen/resume/en/index.html</loc>
     
     <lastmod>2019-04-27T16:09:31.322Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>https://github.com/chandchen/2018/11/django-hard-way/</loc>
     
     <lastmod>2019-04-25T14:19:41.415Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2019/03/download-app/</loc>
-    
-    <lastmod>2019-04-25T14:08:23.489Z</lastmod>
     
   </url>
   
@@ -89,13 +96,6 @@
     <loc>https://github.com/chandchen/resume/index.html</loc>
     
     <lastmod>2019-02-10T07:42:44.456Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/12/something/</loc>
-    
-    <lastmod>2018-12-23T16:15:28.299Z</lastmod>
     
   </url>
   
