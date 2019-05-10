@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/chandchen/resume/en/index.html</loc>
+    <loc>https://github.com/chandchen/2018/12/gallery-story/</loc>
     
-    <lastmod>2019-05-09T16:42:50.707Z</lastmod>
+    <lastmod>2019-05-10T14:26:54.709Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/resume/index.html</loc>
+    
+    <lastmod>2019-05-10T14:21:27.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/chandchen/resume/zh/index.html</loc>
+    
+    <lastmod>2019-05-10T13:54:30.889Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://github.com/chandchen/2018/12/static-sites/</loc>
     
     <lastmod>2019-05-09T14:27:23.177Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/2018/12/gallery-photos/</loc>
-    
-    <lastmod>2019-04-25T14:54:12.332Z</lastmod>
     
   </url>
   
@@ -89,13 +96,6 @@
     <loc>https://github.com/chandchen/about/index.html</loc>
     
     <lastmod>2019-03-31T10:09:57.546Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/chandchen/resume/index.html</loc>
-    
-    <lastmod>2019-02-10T07:42:44.456Z</lastmod>
     
   </url>
   

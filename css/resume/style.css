@@ -23,7 +23,7 @@ body {
 	font-family:  "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 	line-height: 1.2em; 
 	background-color: #f3f3f3;
-	background-image: url(../images/patterns/soft_wallpaper.png);
+	background-image: url(./patterns/furley_bg.png);
 	background-repeat: repeat;
 	background-attachment: fixed;
 	background-position: 0px 0px; 
@@ -67,15 +67,6 @@ h2.sectionHead {
 	letter-spacing: -2px;
 	text-transform: uppercase;
 	position: relative;
-}
-h2.sectionHead:before {
-	content: "";
-	position: absolute;
-	width: 45px;
-	height: 45px;
-	left: -105px;
-	top: -15px;
-	background-image: url(../images/icons.png);
 }
 
 h2#titleName {margin: 20px -60px 10px;}
@@ -331,3 +322,7 @@ body.respond #contactform textarea {width: 90%;}
 body.respond #copyright {margin: 60px auto;}
 
 body.respond #messageSent {margin-top: 20px;}
+
+@media (max-width: 812px){
+    #wrapper {margin: 0px auto 0px;}
+}
