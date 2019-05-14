@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Developing a Django app with zc.buildout | Chand Chen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Buildout是一个基于Python的构建工具, 通过一个配置文件，可以从多个部分创建、组装并部署应用，即使应用包含了非Python的组件，Buildout也能够胜任. Buildout不但能够像setuptools一样自动更新或下载安装依赖包，而且还能够像virtualenv一样，构建一个封闭隔离的开发环境.   So, here’s how to build, test, and dist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Developing a Django app with zc.buildout">
+<meta property="og:url" content="https://github.com/chandchen/essays/django-with-buildout/index.html">
+<meta property="og:site_name" content="Chand Chen">
+<meta property="og:description" content="Buildout是一个基于Python的构建工具, 通过一个配置文件，可以从多个部分创建、组装并部署应用，即使应用包含了非Python的组件，Buildout也能够胜任. Buildout不但能够像setuptools一样自动更新或下载安装依赖包，而且还能够像virtualenv一样，构建一个封闭隔离的开发环境.   So, here’s how to build, test, and dist">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-24T15:47:20.470Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Developing a Django app with zc.buildout">
+<meta name="twitter:description" content="Buildout是一个基于Python的构建工具, 通过一个配置文件，可以从多个部分创建、组装并部署应用，即使应用包含了非Python的组件，Buildout也能够胜任. Buildout不但能够像setuptools一样自动更新或下载安装依赖包，而且还能够像virtualenv一样，构建一个封闭隔离的开发环境.   So, here’s how to build, test, and dist">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-django-with-buildout" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">ChandChen</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle">
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/essays">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/essays">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Developing a Django app with zc.buildout
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <blockquote>
+<p>Buildout是一个基于Python的构建工具, 通过一个配置文件，可以从多个部分创建、组装并部署应用，即使应用包含了非Python的组件，Buildout也能够胜任. Buildout不但能够像setuptools一样自动更新或下载安装依赖包，而且还能够像virtualenv一样，构建一个封闭隔离的开发环境. </p>
+</blockquote>
+<p>So, here’s how to build, test, and distribute a reusable Django app using Buildout, with every step along the way explained in excruciating detail.<br>下面是关于如何使用Buildout构建、测试和配置一个可以复用的Django应用，并详细解释每一步的具体细节。</p>
+<p><strong>Create the Buildout environment</strong><br>First, create the minimal structure for your app. Make a structure like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">django-shorturls/</span><br><span class="line">    LICENSE</span><br><span class="line">    README.md</span><br><span class="line">    bootstrap.py</span><br><span class="line">    buildout.cfg</span><br><span class="line">    setup.py</span><br><span class="line">    src/</span><br><span class="line">        shorturls/</span><br><span class="line">            __init__.py</span><br></pre></td></tr></table></figure>
+<p><strong>LICENSE</strong></p>
+<ul>
+<li>If you’re releasing open source software, you need to have a license. Remember that in the absence of a license the default is “All rights reserved.” That is, if there’s no LICENSE, it’s not open source.</li>
+</ul>
+<p><strong>README.md</strong></p>
+<ul>
+<li>Documentation with your contact info and basic usage instructions, always write one before you are done.</li>
+</ul>
+<p><strong>bootstrap.py</strong></p>
+<ul>
+<li><p>This is Buildout’s bootstrap script. This is a little script that you can include with your package to bootstrap the Buildout environment. You should do so: it saves you from having to install Buildout system-wide, since system-wide packages are the road to hell. This also makes it very easy for others to contribute to your app: they don’t have to know how to use Buildout since they can just run the bootstrap.</p>
+</li>
+<li><p>Getting this file is easy: <code>wget https://downloads.buildout.org/1/bootstrap.py</code></p>
+</li>
+</ul>
+<p><strong>buildout.cfg</strong></p>
+<ul>
+<li>Buildout’s config file.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[buildout]</span><br><span class="line">parts =</span><br></pre></td></tr></table></figure>
+<p><strong>setup.py</strong></p>
+<ul>
+<li>Eventually this’ll contain the magic distutils incantations so that you can install this app and push it to the Cheeseshop. We’ll get to this in a second.</li>
+</ul>
+<p><strong>src/</strong></p>
+<ul>
+<li>The convention in the Buildout world appears to be putting the source to modules in a src directory, so might as well follow convention.</li>
+</ul>
+<p>Just to prove that the above really is easy, here’s what it looks like in reality:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p django-shorturls/src/shorturls</span><br><span class="line">$ cd django-shorturls</span><br><span class="line">$ cp ~/Shrapnel/BSD_LICENSE LICENSE</span><br><span class="line">$ touch README.md</span><br><span class="line">$ wget http://svn.zope.org/*checkout*/zc.buildout/trunk/bootstrap/bootstrap.py</span><br><span class="line">$ cat - &gt; buildout.cfg</span><br><span class="line">[buildout]</span><br><span class="line">parts =</span><br><span class="line">^D</span><br><span class="line">$ touch setup.py</span><br><span class="line">$ touch src/shorturls/__init__.py</span><br></pre></td></tr></table></figure></p>
+<p>Now that our boilerplate is written, we can have Buildout generate the rest of its boilerplate:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ python bootstrap.py</span><br><span class="line">Creating directory &apos;.../django-shorturls/bin&apos;.</span><br><span class="line">Creating directory &apos;.../django-shorturls/parts&apos;.</span><br><span class="line">Creating directory &apos;.../django-shorturls/eggs&apos;.</span><br><span class="line">Creating directory &apos;.../django-shorturls/develop-eggs&apos;.</span><br><span class="line">Generated script &apos;.../django-shorturls/bin/buildout&apos;.</span><br><span class="line"></span><br><span class="line">$ ./bin/buildout</span><br><span class="line">Getting distribution for &apos;zc.buildout&apos;.</span><br><span class="line">Got zc.buildout 1.2.1.</span><br><span class="line">Upgraded:</span><br><span class="line">  zc.buildout version 1.2.1;</span><br><span class="line">restarting.</span><br><span class="line">Generated script &apos;.../django-shorturls/bin/buildout&apos;.</span><br></pre></td></tr></table></figure></p>
+<p>Now we’ve got the latest version of Buildout, and a nice isolated environment to fool around in. Anything we do inside this django-shorturls directory will be nicely isolated, so we can develop in a little sandbox, protected from anything that might differ in the outside world.</p>
+<p><em>Note</em></p>
+<p>What’s kinda cool is that these two steps — <code>python bootstrap.py</code> &amp;&amp; <code>./bin/buildout</code> — are all that anyone who contributes to your project needs to do to replicate your development setup. They’ll get your app, your test suite, and all the requisite bootstrapping. So this work we’re doing up front now can be seen as a one-time expense against all the time all your future contributors would otherwise have to spend getting up and running.</p>
+<p>Let’s take a look at what’s here now, with the stuff bootstrap.py and buildout created in bold:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">django-shorturls/</span><br><span class="line">    bin/</span><br><span class="line">        buildout</span><br><span class="line">    bootstrap.py</span><br><span class="line">    buildout.cfg</span><br><span class="line">    develop-eggs/</span><br><span class="line">    eggs/</span><br><span class="line">        setuptools-0.6c9-py2.5.egg/</span><br><span class="line">        zc.buildout-1.1.1-py2.5.egg/</span><br><span class="line">        zc.buildout-1.2.1-py2.5.egg/</span><br><span class="line">    parts/</span><br><span class="line">    src/</span><br><span class="line">        shorturls/</span><br></pre></td></tr></table></figure></p>
+<p>What’s all this, then?</p>
+<p><strong>/bin/buildout</strong></p>
+<ul>
+<li><p>Every time you change your buildout.cfg, you’ll re-run <code>bin/buildout</code> to update the environment to reflect the changes in your config.</p>
+</li>
+<li><p>Buildout actually keeps track (in a file called .installed.cfg)of what was in your config file the last time you ran buildout and what was installed, so only new or changed stuff gets installed each time.</p>
+</li>
+</ul>
+<p><strong>develop-eggs/</strong></p>
+<ul>
+<li>A placeholder for eggs you’re currently developing; we’ll see this used later on.</li>
+</ul>
+<p><strong>eggs/</strong></p>
+<ul>
+<li>Any eggs that Buildout installs end up here. You can see that in my case I ended up with setuptools (which Buildout builds on top of) as well as two versions of zc.buildout — bootstrap.py installed one, and then buildout automatically detected the availability of a newer version and upgraded it for me.</li>
+</ul>
+<p><strong>parts</strong><br>Certain other bits of Buildout cache, download, or otherwise store things here in parts. Think of this as a staging area and cruft zone.</p>
+<p>Make a setup.py<br>So what we’ll be doing next is starting to develop our shorturls app as a Python package, a.k.a. an “egg.” Buildout requires that the package we’re developing be properly egg-ified, so we need to make a setup.py. A minimal one is fine for now:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from setuptools import setup, find_packages</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name = &quot;django-shorturls&quot;,</span><br><span class="line">    version = &quot;1.0&quot;,</span><br><span class="line">    url = &apos;http://github.com/jacobian/django-shorturls&apos;,</span><br><span class="line">    license = &apos;BSD&apos;,</span><br><span class="line">    description = &quot;A short URL handler for Django apps.&quot;,</span><br><span class="line">    author = &apos;Jacob Kaplan-Moss&apos;,</span><br><span class="line">    packages = find_packages(&apos;src&apos;),</span><br><span class="line">    package_dir = &#123;&apos;&apos;: &apos;src&apos;&#125;,</span><br><span class="line">    install_requires = [&apos;setuptools&apos;],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><em>Set up Buildout, and a sandbox</em></p>
+<ul>
+<li>Next we need to inform Buildout about the egg we’re developing. While we’re at it, we’ll also generate a python that’s local to this development sandbox (this way we can interact with the code as we develop it without needing to install anything).</li>
+</ul>
+<p>Modify your <code>buildout.cfg</code> to read:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[buildout]</span><br><span class="line">parts = python</span><br><span class="line">develop = .</span><br><span class="line">eggs = django-shorturls</span><br><span class="line"></span><br><span class="line">[python]</span><br><span class="line">recipe = zc.recipe.egg</span><br><span class="line">interpreter = python</span><br><span class="line">eggs = $&#123;buildout:eggs&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The important bits to know are:</p>
+<ul>
+<li><code>buildout.cfg</code> INI-style config file, with the added ability to interpolate variables using ${varname} syntax. Refer to keys defined in other sections as ${section:variable}.</li>
+<li><code>[buildout]</code> Waterfall style, proceeds through every other section defined in the buildout:parts key.</li>
+<li><code>develop = .</code> Developing a package whose setup.py lives in ., the current directory.</li>
+<li><code>eggs = django-shorturls</code> The egg we’re developing to be available to any scripts that run inside this environment, and to get the egg we’re developing installed.</li>
+<li><code>[python]</code>, Generate a Python interpreter local to this Buildout.</li>
+<li><code>Parts</code> Associated with a “recipe”. Recipes are just other eggs, available from PyPI or elsewhere, that define how to process a part of a Buildout.</li>
+<li><code>recipe = zc.recipe.egg</code> Standard way of installing eggs, creating wrapper scripts and interpreters, and others.</li>
+<li><code>interpreter = python</code> Tells zc.recipe.egg to generate a Python interpreter named python and install it locally to the Buildout.</li>
+<li><code>eggs = ${buildout:eggs}</code> Make development egg available, to copy the list of eggs from the buildout part.</li>
+</ul>
+<p>Now that we’ve changed our buildout.cfg, we re-run bin/buildout to pick up those changes:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/buildout</span><br><span class="line">Develop: &apos;.../django-shorturls/.&apos;</span><br><span class="line">Getting distribution for &apos;zc.recipe.egg&apos;.</span><br><span class="line">Got zc.recipe.egg 1.2.2.</span><br><span class="line">Installing python.</span><br><span class="line">Generated interpreter &apos;.../django-shorturls/bin/python&apos;.</span><br></pre></td></tr></table></figure></p>
+<p>What happened here was:</p>
+<p>Buildout noted that we’re using a develop egg, ran the local setup.py file, and created a file develop-eggs/django-shorturls.egg-link, a little link file making src/shorturls available to the rest of Buildout.<br>We asked for the zc.recipe.egg recipe but didn’t have it already installed, so Buildout fetched and installed it from the Cheeseshop.<br>Finally, Buildout generated a bin/python interpreter.<br>Let’s take a look at what this bin/python interpreter is. We haven’t installed our app anywhere, so using the system Python we can’t see the package:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/python</span><br><span class="line">&gt;&gt;&gt; import shorturls</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">ImportError: No module named shorturls</span><br></pre></td></tr></table></figure></p>
+<p>However, we can get to our package from this little wrapper:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/python</span><br><span class="line">&gt;&gt;&gt; import shorturls</span><br><span class="line">&gt;&gt;&gt; shorturls</span><br><span class="line">&lt;module &apos;shorturls&apos; from &apos;.../django-shorturls/src/shorturls/__init__.py&apos;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>This shows off one of the key concepts of Buildout: what happens in Buildout, stays in Buildout. That is, everything that you do inside this isolated environment is only available inside the environment, and doesn’t clutter up your system.</p>
+<p>Note</p>
+<p>By the way, now’s a good time to create an “ignore” file for your revision control system — you are using revision control, right? Since a bunch of this stuff gets generated, we don’t want to check it into revision control.</p>
+<p>Here’s what I use for my .gitignore:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">*.pyc</span><br><span class="line">*.pyo</span><br><span class="line">.installed.cfg</span><br><span class="line">bin</span><br><span class="line">develop-eggs</span><br><span class="line">dist</span><br><span class="line">downloads</span><br><span class="line">eggs</span><br><span class="line">parts</span><br><span class="line">src/*.egg-info</span><br></pre></td></tr></table></figure></p>
+<p><strong>Create a test wrapper</strong><br>Code without tests is broken as designed. Therefore, the next step is to set up an easy way to run tests.<br>没有测试的代码就像破碎的设计图，下面将会用一个最简单的方法让测试代码跑起来。</p>
+<p>We’ll do this with djangorecipe, a Buildout recipe that automates much of the process of using Django with Buildout. It actually does a lot more than we’ll touch on here, but that’s another show.</p>
+<p><em>Note</em></p>
+<p>You might feel like the next bit is somewhat clunky, and it is. The basic problem is that Django’s test suite needs at least a minimal settings.py to be able to run unit tests, and there’s not really a slick way of doing that automatically (yet). I’ve played with a few ways of doing this, and what follows is the least-clunky way I could figure out.</p>
+<p>Open up src/shorturls/testsettings.py and make a minimal settings file:</p>
+<p>DATABASE_ENGINE = ‘sqlite3’<br>DATABASE_NAME = ‘/tmp/shorturls.db’<br>INSTALLED_APPS = [‘shorturls’]<br>ROOT_URLCONF = [‘shorturls.urls’]<br>These four settings are the absolute minimum set required just to get the test suite bootstrapped and running. Note that the DATABASE_NAME given there won’t actually be used — tests under SQLite are run in-memory — but you do need one anyway.</p>
+<p>Also, a limitation of the test suite is that it’ll only test apps with a models.py (even an empty one), so:</p>
+<p>$ touch src/shorturls/models.py<br>Next, inform Buildout and djangorecipe of that file and ask it to build a test runner by appending the following to buildout.cfg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[django]</span><br><span class="line">recipe = djangorecipe</span><br><span class="line">version = 1.0.2</span><br><span class="line">project = shorturls</span><br><span class="line">projectegg = shorturls</span><br><span class="line">settings = testsettings</span><br><span class="line">test = shorturls</span><br><span class="line">eggs = $&#123;buildout:eggs&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Add django to the list of parts in the buildout:parts setting (<code>parts = python django</code>).</p>
+<p><code>recipe = djangorecipe</code></p>
+<ul>
+<li>We want to use djangorecipe for this part.</li>
+</ul>
+<p><code>version = 1.0.2</code></p>
+<ul>
+<li>Develop against Django 1.0.2.</li>
+</ul>
+<p><code>project = shorturls</code></p>
+<ul>
+<li>The name of the Django “project” that the Django installation will use.</li>
+<li>The main purpose of djangorecipe is to pull together all the dependancies for a deployed Django app, and in that situation you need a project to contain the settings, root URLconf, and such. The recipe will actually generate this project module for you.</li>
+</ul>
+<p><code>projectegg = shorturls</code></p>
+<ul>
+<li>This tells djangorecipe that our project module already exists in the package shorturls, so don’t generate a project module.</li>
+</ul>
+<p><code>settings = testsettings</code></p>
+<ul>
+<li>The name (relative to project) of the module containing settings. So between this and project, the <code>DJANGO_SETTINGS_MODULE</code> used by the test runner will be <code>shorturls.testsettings</code>.</li>
+</ul>
+<p><code>test = shorturls</code></p>
+<ul>
+<li>This tells the recipe to generate a test runner for the apps listed. We just have one, shorturls.</li>
+</ul>
+<p><code>eggs = ${buildout:eggs}</code></p>
+<ul>
+<li>Just as for the python part, we want to make the eggs that Buildout knows about available to the generated scripts.</li>
+</ul>
+<p>Since we’ve made changes to the buildout.cfg, we re-run buildout to pick up those changes:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/buildout</span><br><span class="line">Develop: &apos;.../django-shorturls/.&apos;</span><br><span class="line">Installing &apos;djangorecipe&apos;.</span><br><span class="line">Getting distribution for &apos;djangorecipe&apos;.</span><br><span class="line">Got djangorecipe 0.17.1.</span><br><span class="line">Installing django.</span><br><span class="line">Downloading Django from: http://www.djangoproject.com/download/1.0.2/tarball/</span><br><span class="line">Generated script &apos;.../django-shorturls/bin/django&apos;.</span><br><span class="line">Generated script &apos;.../django-shorturls/bin/test&apos;.</span><br></pre></td></tr></table></figure></p>
+<p>We’ve got two new scripts here.</p>
+<p><code>bin/django</code> is a manage.py wrapper that bootstraps Django into the Buildout environment. Try, for example, <code>./bin/django shell</code> to get into a shell already bootstraped both for Buildout and for Django.</p>
+<p><code>bin/test</code> is the one we’re really interested in, though: this is the one that runs the test for the app we’re developing. To make sure everything works, let’s create a simple passing test to double-check that it gets picked up and run correctly. Put something like the following into <code>src/shorturls/tests.py</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from django.test import TestCase</span><br><span class="line"></span><br><span class="line">class ShortURLTests(TestCase):</span><br><span class="line">    def test_environment(self):</span><br><span class="line">        &quot;&quot;&quot;Just make sure everything is set up correctly.&quot;&quot;&quot;</span><br><span class="line">        self.assert_(True)</span><br></pre></td></tr></table></figure></p>
+<p>And then run the tests:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ./bin/tests</span><br><span class="line">Creating test database...</span><br><span class="line">.</span><br><span class="line">------------------------------</span><br><span class="line">Ran 1 test in 0.003s</span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line">Destroying test database...</span><br></pre></td></tr></table></figure></p>
+<p>Now that we’ve got code, it’s time to share it with the world.</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/essays/django-with-buildout/" class="article-date">
+  <time datetime="2019-04-24T13:46:46.000Z" itemprop="datePublished">2019-04-24</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/essays/web-crawler-scrapy/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Prev</strong>
+      <div class="article-nav-title">
+        
+          Making Web Crawlers Using Scrapy
+        
+      </div>
+    </a>
+  
+  
+    <a href="/essays/qrcode-download-app/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Next</strong>
+      <div class="article-nav-title">QR Code for Both Android Market and App Store</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>I’m <strong><a href="/about/">Chand</a></strong>, a web developer. All articles are under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. Follow me on <a href="https://twitter.com/chandchen">Twitter</a> for communicating, <a href="https://github.com/chandchen">GitHub</a> for code, and <a href="https://www.instagram.com/chandrdo/">Instagram</a> for daily.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128592946-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128592946-1');
+  </script>
+  <!-- End Google Analytics -->
+  
+
+
+
+
+    </div>
+  </body>
+</html>

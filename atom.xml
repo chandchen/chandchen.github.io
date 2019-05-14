@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/chandchen/"/>
-  <updated>2019-04-24T15:47:20.470Z</updated>
+  <updated>2019-05-14T16:33:43.697Z</updated>
   <id>https://github.com/chandchen/</id>
   
   <author>
@@ -17,9 +17,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Making Web Crawlers Using Scrapy</title>
+    <link href="https://github.com/chandchen/essays/web-crawler-scrapy/"/>
+    <id>https://github.com/chandchen/essays/web-crawler-scrapy/</id>
+    <published>2019-05-13T13:48:29.000Z</published>
+    <updated>2019-05-14T16:33:43.697Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Developing a Django app with zc.buildout</title>
-    <link href="https://github.com/chandchen/2019/04/django-buildout/"/>
-    <id>https://github.com/chandchen/2019/04/django-buildout/</id>
+    <link href="https://github.com/chandchen/essays/django-with-buildout/"/>
+    <id>https://github.com/chandchen/essays/django-with-buildout/</id>
     <published>2019-04-24T13:46:46.000Z</published>
     <updated>2019-04-24T15:47:20.470Z</updated>
     
@@ -40,8 +54,8 @@
   
   <entry>
     <title>QR Code for Both Android Market and App Store</title>
-    <link href="https://github.com/chandchen/2019/03/download-app/"/>
-    <id>https://github.com/chandchen/2019/03/download-app/</id>
+    <link href="https://github.com/chandchen/essays/qrcode-download-app/"/>
+    <id>https://github.com/chandchen/essays/qrcode-download-app/</id>
     <published>2019-03-02T15:55:33.000Z</published>
     <updated>2019-05-09T14:30:22.083Z</updated>
     
@@ -61,8 +75,8 @@
   
   <entry>
     <title>Building a Calendar with Pure JavaScript</title>
-    <link href="https://github.com/chandchen/2018/12/calendar-js/"/>
-    <id>https://github.com/chandchen/2018/12/calendar-js/</id>
+    <link href="https://github.com/chandchen/essays/calendar-via-javascript/"/>
+    <id>https://github.com/chandchen/essays/calendar-via-javascript/</id>
     <published>2018-12-11T10:25:57.000Z</published>
     <updated>2019-04-05T12:44:43.276Z</updated>
     
@@ -82,8 +96,8 @@
   
   <entry>
     <title>Gallery Story</title>
-    <link href="https://github.com/chandchen/2018/12/gallery-story/"/>
-    <id>https://github.com/chandchen/2018/12/gallery-story/</id>
+    <link href="https://github.com/chandchen/essays/gallery-story/"/>
+    <id>https://github.com/chandchen/essays/gallery-story/</id>
     <published>2018-12-10T12:07:47.000Z</published>
     <updated>2019-05-10T14:26:54.709Z</updated>
     
@@ -105,8 +119,8 @@
   
   <entry>
     <title>Placeholder</title>
-    <link href="https://github.com/chandchen/2018/12/someone/"/>
-    <id>https://github.com/chandchen/2018/12/someone/</id>
+    <link href="https://github.com/chandchen/essays/someone/"/>
+    <id>https://github.com/chandchen/essays/someone/</id>
     <published>2018-12-10T11:58:22.000Z</published>
     <updated>2019-04-25T14:20:56.125Z</updated>
     
@@ -119,8 +133,8 @@
   
   <entry>
     <title>How to Make a Static Website</title>
-    <link href="https://github.com/chandchen/2018/12/static-sites/"/>
-    <id>https://github.com/chandchen/2018/12/static-sites/</id>
+    <link href="https://github.com/chandchen/essays/build-static-website/"/>
+    <id>https://github.com/chandchen/essays/build-static-website/</id>
     <published>2018-12-09T13:11:35.000Z</published>
     <updated>2019-05-09T14:27:23.177Z</updated>
     
@@ -143,23 +157,9 @@
   </entry>
   
   <entry>
-    <title>Placeholder</title>
-    <link href="https://github.com/chandchen/2018/12/placeholder/"/>
-    <id>https://github.com/chandchen/2018/12/placeholder/</id>
-    <published>2018-12-09T12:28:25.000Z</published>
-    <updated>2018-12-23T04:28:39.323Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>How to Use Python Virtualenv and VirtualenvWrapper</title>
-    <link href="https://github.com/chandchen/2018/12/virtualenv/"/>
-    <id>https://github.com/chandchen/2018/12/virtualenv/</id>
+    <link href="https://github.com/chandchen/essays/python-virtualenv/"/>
+    <id>https://github.com/chandchen/essays/python-virtualenv/</id>
     <published>2018-12-02T12:57:18.000Z</published>
     <updated>2019-04-25T14:20:08.346Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>Learn Django the Hard Way</title>
-    <link href="https://github.com/chandchen/2018/11/django-hard-way/"/>
-    <id>https://github.com/chandchen/2018/11/django-hard-way/</id>
+    <link href="https://github.com/chandchen/essays/learn-django-hard-way/"/>
+    <id>https://github.com/chandchen/essays/learn-django-hard-way/</id>
     <published>2018-11-28T11:56:41.000Z</published>
     <updated>2019-04-25T14:19:41.415Z</updated>
     
@@ -193,8 +193,8 @@
   
   <entry>
     <title>How to Deploy a GitHub Page by Using Hexo</title>
-    <link href="https://github.com/chandchen/2018/11/hexo/"/>
-    <id>https://github.com/chandchen/2018/11/hexo/</id>
+    <link href="https://github.com/chandchen/essays/deploy-hexo-to-github/"/>
+    <id>https://github.com/chandchen/essays/deploy-hexo-to-github/</id>
     <published>2018-11-04T07:40:09.000Z</published>
     <updated>2019-04-25T13:46:55.221Z</updated>
     
@@ -217,8 +217,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/chandchen/2018/11/hello-world/"/>
-    <id>https://github.com/chandchen/2018/11/hello-world/</id>
+    <link href="https://github.com/chandchen/essays/hello-world/"/>
+    <id>https://github.com/chandchen/essays/hello-world/</id>
     <published>2018-11-01T15:45:36.833Z</published>
     <updated>2018-12-09T10:52:58.427Z</updated>
     

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>QR Code for Both Android Market and App Store | Chand Chen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The embedded URL could link to a webpage that checks user agents and redirects appropriately. If the Safari on iOS user agent is detected, redirect to Apple’s App Store. An Android user agent would be">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QR Code for Both Android Market and App Store">
+<meta property="og:url" content="https://github.com/chandchen/essays/qrcode-download-app/index.html">
+<meta property="og:site_name" content="Chand Chen">
+<meta property="og:description" content="The embedded URL could link to a webpage that checks user agents and redirects appropriately. If the Safari on iOS user agent is detected, redirect to Apple’s App Store. An Android user agent would be">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/pw68gTW.png">
+<meta property="og:updated_time" content="2019-05-09T14:30:22.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QR Code for Both Android Market and App Store">
+<meta name="twitter:description" content="The embedded URL could link to a webpage that checks user agents and redirects appropriately. If the Safari on iOS user agent is detected, redirect to Apple’s App Store. An Android user agent would be">
+<meta name="twitter:image" content="https://i.imgur.com/pw68gTW.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-qrcode-download-app" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">ChandChen</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle">
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/essays">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/essays">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      QR Code for Both Android Market and App Store
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>The embedded URL could link to a webpage that checks user agents and redirects appropriately. If the <strong>Safari</strong> on iOS user agent is detected, redirect to Apple’s App Store. An <strong>Android</strong> user agent would be redirected to an appropriate app store.</p>
+<h5 id="Quick-Solution"><a href="#Quick-Solution" class="headerlink" title="Quick Solution"></a>Quick Solution</h5><ol>
+<li>Create a separate web link with embedded js code that checks browser user-agent informations and doing a redirection</li>
+<li>Using the web link to generate the corresponding QR code</li>
+<li>When user scans the QR code using the mobile phone, it can automatically identify the device and then automatically redirect to the corresponding page of the device.</li>
+</ol>
+<p><img src="https://i.imgur.com/pw68gTW.png" alt="Scan to Download an Awesome App"></p>
+<p>It’s quite easy to make them work, you just need a simple html file, here’s what it looks like in reality:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Thank You for Downloading...<span class="tag">&lt;/<span class="name">title</span>&gt;</span>   </span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">            var browser = &#123;</span></span><br><span class="line"><span class="undefined">                versions: function() &#123;</span></span><br><span class="line"><span class="undefined">                    var u = navigator.userAgent, app = navigator.appVersion;</span></span><br><span class="line"><span class="undefined">                    return &#123;</span></span><br><span class="line"><span class="undefined">                        trident: u.indexOf('Trident') &gt; -1, //IE core</span></span><br><span class="line"><span class="undefined">                        presto: u.indexOf('Presto') &gt; -1, //Opera core</span></span><br><span class="line"><span class="undefined">                        webKit: u.indexOf('AppleWebKit') &gt; -1, //Apple、Google core</span></span><br><span class="line"><span class="undefined">                        gecko: u.indexOf('Gecko') &gt; -1 &amp;&amp; u.indexOf('KHTML') == -1, //FireFox core</span></span><br><span class="line"><span class="undefined">                        mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //Mobile device</span></span><br><span class="line"><span class="undefined">                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios device</span></span><br><span class="line"><span class="undefined">                        android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android device or uc browser</span></span><br><span class="line"><span class="undefined">                        iPhone: u.indexOf('iPhone') &gt; -1 || u.indexOf('Mac') &gt; -1, //iPhone or QQHD browser</span></span><br><span class="line"><span class="undefined">                        iPad: u.indexOf('iPad') &gt; -1, //iPad</span></span><br><span class="line"><span class="undefined">                        webApp: u.indexOf('Safari') == -1 //webapp</span></span><br><span class="line"><span class="undefined">                    &#125;;</span></span><br><span class="line"><span class="undefined">                &#125;(),</span></span><br><span class="line"><span class="undefined">                language: (navigator.browserLanguage || navigator.language).toLowerCase()</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) &#123;</span></span><br><span class="line"><span class="undefined">                window.location = "https://itunes.apple.com/cn/app/xxx";</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            else if (browser.versions.android) &#123;</span></span><br><span class="line"><span class="undefined">                window.location = "https://sj.qq.com/myapp/detail.htm?apkName=xxx";</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        Thank You for Downloading...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/essays/qrcode-download-app/" class="article-date">
+  <time datetime="2019-03-02T15:55:33.000Z" itemprop="datePublished">2019-03-02</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/essays/django-with-buildout/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Prev</strong>
+      <div class="article-nav-title">
+        
+          Developing a Django app with zc.buildout
+        
+      </div>
+    </a>
+  
+  
+    <a href="/essays/calendar-via-javascript/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Next</strong>
+      <div class="article-nav-title">Building a Calendar with Pure JavaScript</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>I’m <strong><a href="/about/">Chand</a></strong>, a web developer. All articles are under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>. Follow me on <a href="https://twitter.com/chandchen">Twitter</a> for communicating, <a href="https://github.com/chandchen">GitHub</a> for code, and <a href="https://www.instagram.com/chandrdo/">Instagram</a> for daily.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128592946-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128592946-1');
+  </script>
+  <!-- End Google Analytics -->
+  
+
+
+
+
+    </div>
+  </body>
+</html>
