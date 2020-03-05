@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chandchen.com/resume/index.html</loc>
+    
+    <lastmod>2020-03-05T15:21:28.920Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chandchen.com/projects/apps/index.html</loc>
     
     <lastmod>2019-07-04T12:24:51.571Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://chandchen.com/about/index.html</loc>
     
     <lastmod>2019-05-14T16:32:07.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chandchen.com/resume/index.html</loc>
-    
-    <lastmod>2019-05-10T14:21:27.266Z</lastmod>
     
   </url>
   
